@@ -2,7 +2,6 @@ import uuid
 
 import names
 from random import sample
-import pandas as pd
 import random
 import time
 
