@@ -2,9 +2,13 @@ import uuid
 
 import names
 from random import sample
-import pandas as pd
+# import pandas as pd
 import random
 import time
+import nltk
+from nltk.corpus import words
+
+nltk.download('words')
 
 def get_andersen_family_item():
     andersen_item = {
@@ -101,8 +105,35 @@ def get_johnson_family_item():
     }
     return johnson_item
 
+# Entity name & Business name
 def get_people_name():
-    return names.get_full_name()
+    word_len = random.randint(3, 10)
+    return ' '.join(sample(words.words(), word_len))
 
 def get_ABN_numbers():
     return random.randint(10000000000,20000000000)
+
+# Trading Name
+def get_trading_name():
+    word_len = random.randint(2, 4)
+    return ' '.join(sample(words.words(), word_len))
+
+def get_post_code():
+    return random.randint(800, 7999)
+
+def get_business_name():
+    start = time.time()
+    business_name = ""
+    business_cnt = random.randint(1, 410)
+    for _ in range(business_cnt):
+        word_len = random.randint(1, 4)
+        business_name += ' '.join(sample(words.words(), word_len))
+
+    print("Time took to generate business name: {}".format(time.time() - start))
+    return business_name
+
+trading_name = get_trading_name()
+
+print("Trading name:", trading_name)
+print("Entity name:", get_people_name())
+print("Business name:", get_business_name())
