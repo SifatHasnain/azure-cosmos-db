@@ -33,7 +33,7 @@ async def create_item(loop):
                 "Acn": "",
                 "PostCode": str(data.get_post_code()),
                 "EntityName": data.get_people_name(),
-                "BusinessName": data.get_people_name(),
+                "BusinessName": data.get_business_name(),
                 "TradingName": data.get_trading_name(),
                 "State": "WA",
                 "TradingCount": 0,
