@@ -107,7 +107,7 @@ def get_johnson_family_item():
 
 # Entity name & Business name
 def get_people_name():
-    word_len = random.randint(3, 10)
+    word_len = random.randint(3, 5)
     return ' '.join(sample(words.words(), word_len))
 
 def get_ABN_numbers():
@@ -124,9 +124,9 @@ def get_post_code():
 def get_business_name():
     start = time.time()
     business_name = ""
-    business_cnt = random.randint(1, 410)
+    business_cnt = random.randint(1, 200)
     for _ in range(business_cnt):
-        word_len = random.randint(1, 4)
+        word_len = random.randint(1, 2)
         business_name += ' '.join(sample(words.words(), word_len))
 
     # print("Time took to generate business name: {}".format(time.time() - start))
