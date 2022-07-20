@@ -129,11 +129,11 @@ def get_business_name():
         word_len = random.randint(1, 4)
         business_name += ' '.join(sample(words.words(), word_len))
 
-    print("Time took to generate business name: {}".format(time.time() - start))
+    # print("Time took to generate business name: {}".format(time.time() - start))
     return business_name
 
-trading_name = get_trading_name()
+# trading_name = get_trading_name()
 
-print("Trading name:", trading_name)
-print("Entity name:", get_people_name())
-print("Business name:", get_business_name())
+# print("Trading name:", trading_name)
+# print("Entity name:", get_people_name())
+# print("Business name:", get_business_name())

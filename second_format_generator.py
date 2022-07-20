@@ -23,6 +23,7 @@ async def create_item(loop):
                                                         )
         # Add items to the container
         # <create_item>
+        random.seed(42)
         start_time = time.time()
         for i in range(0, 2*10**7):
             await container.create_item(body={
