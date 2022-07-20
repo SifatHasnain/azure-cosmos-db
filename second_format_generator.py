@@ -19,8 +19,7 @@ async def create_item(loop):
         database = client.get_database_client(DATABASE_ID)
         container = await database.create_container_if_not_exists(
                                                             id=CONTAINER_ID, 
-                                                            partition_key=PartitionKey(path="/lastName"),
-                                                            offer_throughput=1000
+                                                            partition_key=PartitionKey(path="/PostCode")
                                                         )
         # Add items to the container
         # <create_item>
@@ -64,8 +63,7 @@ async def read_item(loop):
         database = client.get_database_client(DATABASE_ID)
         container = await database.create_container_if_not_exists(
                                                             id=CONTAINER_ID, 
-                                                            partition_key=PartitionKey(path="/lastName"),
-                                                            offer_throughput=400
+                                                            partition_key=PartitionKey(path="/PostCode")
         )
 
         # Query these items using the SQL query syntax. 

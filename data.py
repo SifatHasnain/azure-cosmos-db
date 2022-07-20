@@ -6,9 +6,11 @@ from random import sample
 import random
 import time
 import nltk
-from nltk.corpus import words
 
+print("Downloading nltk words...")
 nltk.download('words')
+print("Download complete!")
+from nltk.corpus import words
 
 def get_andersen_family_item():
     andersen_item = {
