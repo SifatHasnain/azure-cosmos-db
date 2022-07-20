@@ -7,6 +7,7 @@ import config
 import uuid
 import time
 import random 
+import datetime
 
 HOST = config.settings['host']
 MASTER_KEY = config.settings['master_key']
@@ -23,10 +24,11 @@ async def create_item(loop):
                                                         )
         # Add items to the container
         # <create_item>
-        random.seed(42)
+        random.seed(time.time())
         start_time = time.time()
         for i in range(0, 2*10**7):
             await container.create_item(body={
+                "id": str(uuid.uuid4()),
                 "AbrId": "606dda32-b75e-4cf9-a7fd-d726e4f76749",
                 "Abn": str(data.get_ABN_numbers()),
                 "EntityType": "Discretionary Trading Trust",
