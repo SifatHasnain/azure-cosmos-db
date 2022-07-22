@@ -1,5 +1,5 @@
 cosmos-db
 __pycache__
-test.py
+test*
 *.json
 config.py
